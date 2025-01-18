@@ -26,9 +26,6 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.64.1
         version: 5.64.1(react@19.0.0)
-      '@xstate/store':
-        specifier: ^2.6.2
-        version: 2.6.2(react@19.0.0)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -36,7 +33,7 @@ importers:
         specifier: ^5.1.17
         version: 5.1.21
       react:
-        specifier: link:@xstate/store/react
+        specifier: ^19.0.0
         version: 19.0.0
       react-dom:
         specifier: ^19.0.0
@@ -1136,17 +1133,6 @@ packages:
 
   '@walletconnect/window-metadata@1.0.1':
     resolution: {integrity: sha512-9koTqyGrM2cqFRW517BPY/iEtUDx2r1+Pwwu5m7sJ7ka79wi3EyqhqcICk/yDmv6jAS1rjKgTKXlEhanYjijcA==}
-
-  '@xstate/store@2.6.2':
-    resolution: {integrity: sha512-zznGTWU+tmhbD0UUxPLy5FmxvceBNyMsN1Tuy7UMJAH9NuaQWj4/B2L+EcO6FxI2b2CNyzk1PL5mZ8cDpBFpMw==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0-0
-      solid-js: ^1.7.6
-    peerDependenciesMeta:
-      react:
-        optional: true
-      solid-js:
-        optional: true
 
   '@zeit/schemas@2.36.0':
     resolution: {integrity: sha512-7kjMwcChYEzMKjeex9ZFXkt1AyNov9R5HZtjBKVsmVpw7pa7ZtlCGvCBC2vnnXctaYN+aRI61HjIqeetZW5ROg==}
@@ -4734,10 +4720,6 @@ snapshots:
     dependencies:
       '@walletconnect/window-getters': 1.0.1
       tslib: 1.14.1
-
-  '@xstate/store@2.6.2(react@19.0.0)':
-    optionalDependencies:
-      react: 19.0.0
 
   '@zeit/schemas@2.36.0': {}
 
