@@ -1,6 +1,0 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    access-control-allow-origin = "*",
-    access-control-allow-methods = "GET",
-    access-control-allow-headers = "X-Requested-With, content-type, Authorization"
