@@ -1,13 +1,12 @@
-import { useConnect } from "wagmi";
-import { useEffect } from "react";
+import { useAccount, useConnect } from "wagmi";
+import { useEffect, useState } from "react";
 
 export function useSafeAutoConnect() {
   const { connect, connectors } = useConnect();
 
   useEffect(() => {
-    const safeConnector = connectors.find((c) => c.name === "Safe");
-    console.log({ connectors });
-    // safeConnector!.connect();
+    const safeConnector = connectors.find((c) => c.id === "safe");
+
     if (safeConnector) connect({ connector: safeConnector });
   }, [connect, connectors]);
 }
