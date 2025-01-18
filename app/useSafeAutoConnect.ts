@@ -7,7 +7,7 @@ export function useSafeAutoConnect() {
   useEffect(() => {
     const safeConnector = connectors.find((c) => c.name === "Safe");
     console.log({ connectors });
-    safeConnector!.connect();
+    // safeConnector!.connect();
     if (safeConnector) connect({ connector: safeConnector });
   }, [connect, connectors]);
 }
