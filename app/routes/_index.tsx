@@ -6,6 +6,7 @@ import { formatUnits } from "viem";
 import { NativeBalance } from "~/components/NativeBalance";
 import { BreadBalance } from "~/components/BreadBalance";
 import { useAccount } from "wagmi";
+import { useEffect } from "react";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -18,6 +19,11 @@ export default function Index() {
   // const { status, data, error } = useSentryTest();
 
   const account = useAccount();
+
+  useEffect(() => {
+    console.log("account status: ", account.status);
+  }, [account]);
+
   return (
     <div>
       <h1>this is the home page</h1>

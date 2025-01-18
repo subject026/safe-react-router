@@ -1,5 +1,5 @@
 import { http, createConfig, injected } from "wagmi";
-import { safe } from "wagmi/connectors";
+import { safe, walletConnect } from "wagmi/connectors";
 import { gnosis, mainnet, sepolia } from "wagmi/chains";
 
 export const config = createConfig({
@@ -16,6 +16,7 @@ export const config = createConfig({
       //   debug: false,
       // },
     }),
+    walletConnect({ projectId: import.meta.env.VITE_WC_PROJECT_ID }),
     // injected(),
   ],
 });
