@@ -1,6 +1,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "\*",
-    Access-Control-Allow-Methods = "GET",
-    Access-Control-Allow-Headers = "X-Requested-With, content-type, Authorization"
+    access-control-allow-origin = "*",
+    access-control-allow-methods = "GET",
+    access-control-allow-headers = "X-Requested-With, content-type, Authorization"
