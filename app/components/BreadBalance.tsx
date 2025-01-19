@@ -9,5 +9,7 @@ export function BreadBalance({ address }: { address: Hex }) {
     args: [address],
   });
 
-  return <div>{status === "success" && formatUnits(data, 18)}</div>;
+  return (
+    <div>Bread balance: {status === "success" && formatUnits(data, 18)}</div>
+  );
 }

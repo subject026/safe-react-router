@@ -1,12 +1,10 @@
-import { useReadErc20BalanceOf } from "~/generated";
+import { useAccount } from "wagmi";
 import type { Route } from "../+types/root";
-import { useSentryTest } from "~/hooks/useSentryTest";
-import { chainConfig } from "~/chainConfig";
-import { formatUnits } from "viem";
+
 import { NativeBalance } from "~/components/NativeBalance";
 import { BreadBalance } from "~/components/BreadBalance";
-import { useAccount } from "wagmi";
-import { useEffect } from "react";
+import { Bake } from "~/components/Bake";
+import { Burn } from "~/components/Burn";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,26 +14,21 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Index() {
-  // const { status, data, error } = useSentryTest();
-
   const account = useAccount();
-
-  useEffect(() => {
-    console.log("account status: ", account.status);
-  }, [account]);
 
   return (
     <div>
-      <h1>this is the home page</h1>
-      <h2>
-        {account.status === "connected" && (
-          <>
-            {account.address}
+      {account.status === "connected" && (
+        <>
+          {account.address}
+          <div className="grid gap-6">
             <NativeBalance address={account.address} />
             <BreadBalance address={account.address} />
-          </>
-        )}
-      </h2>
+            <Bake />
+            <Burn />
+          </div>
+        </>
+      )}
     </div>
   );
 }

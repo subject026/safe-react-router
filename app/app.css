@@ -10,5 +10,5 @@ body {
 }
 
 .page-wrap {
-  @apply max-w-4xl px-4;
+  @apply m-auto max-w-4xl px-4;
 }

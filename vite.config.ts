@@ -11,12 +11,7 @@ export default defineConfig({
     },
   },
   plugins: [reactRouter(), tsconfigPaths()],
-  // server: {
-  //   headers: {
-  //     "Access-Control-Allow-Origin": "\*",
-  //     "Access-Control-Allow-Methods": "GET",
-  //     "Access-Control-Allow-Headers":
-  //       "X-Requested-With, content-type, Authorization",
-  //   },
-  // },
+  server: {
+    port: 3000,
+  },
 });
