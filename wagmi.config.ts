@@ -1,13 +1,13 @@
 import { defineConfig } from "@wagmi/cli";
 import { react } from "@wagmi/cli/plugins";
-import { erc20Abi } from "viem";
+import { breadAbi } from "./abi/bread";
 
 export default defineConfig({
   out: "app/generated.ts",
   contracts: [
     {
-      name: "erc20",
-      abi: erc20Abi,
+      name: "bread",
+      abi: breadAbi,
     },
   ],
   plugins: [react()],
