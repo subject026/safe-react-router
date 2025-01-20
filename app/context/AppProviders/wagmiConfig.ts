@@ -1,5 +1,5 @@
 import { http, createConfig } from "wagmi";
-import { metaMask, safe } from "wagmi/connectors";
+import { safe } from "wagmi/connectors";
 import { gnosis } from "wagmi/chains";
 
 export const config = createConfig({
@@ -7,7 +7,7 @@ export const config = createConfig({
   transports: {
     [gnosis.id]: http(),
   },
-  connectors: [metaMask(), safe()],
+  connectors: [safe()],
 });
 
 declare module "wagmi" {
