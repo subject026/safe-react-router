@@ -1,7 +1,6 @@
 {
-    "name": "Safe & React Router",
-    "description": "just a little app",
-    "short_name": "Safe RR",
-    "iconPath": "logo-light.svg"
-  }
-  
+  "name": "Safe Transaction Service Demo",
+  "description": "just a safe little app",
+  "short_name": "Safe Tx Demo",
+  "iconPath": "logo-light.svg"
+}

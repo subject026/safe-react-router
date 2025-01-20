@@ -1,5 +1,5 @@
 {
-  "name": "xstate-store",
+  "name": "safe-tx-service-demo",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,6 +12,7 @@
     "@react-router/fs-routes": "^7.1.3",
     "@react-router/node": "^7.1.3",
     "@react-router/serve": "^7.1.3",
+    "@safe-global/safe-apps-sdk": "^9.1.0",
     "@sentry/browser": "^8.50.0",
     "@sentry/react": "^8.50.0",
     "@tanstack/react-query": "^5.64.1",

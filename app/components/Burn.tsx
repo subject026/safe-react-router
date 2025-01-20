@@ -1,10 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import SafeSDK from "@safe-global/safe-apps-sdk";
+import { parseUnits, type Hex } from "viem";
 
 import { Card } from "./Card";
 import { H2 } from "./Typography";
+import { useWriteBreadBurn } from "~/generated";
+import { chainConfig } from "~/chainConfig";
+import { Button } from "./Button";
+import { useSafeTransaction } from "~/context/SafeTransactionContext";
 
-export function Burn() {
+export function Burn({ address }: { address: Hex }) {
   const [amount, setAmount] = useState("");
+
+  const { writeContract, status, data } = useWriteBreadBurn();
+  const { setHash } = useSafeTransaction();
+
+  useEffect(() => {
+    if (!data) return;
+    setHash(data);
+
+    // const sdk = new SafeSDK();
+    // sdk.txs.getBySafeTxHash(data).then((res) => {
+    //   console.log("safeByTxHash: ", res);
+    // });
+  }, [status, data]);
 
   return (
     <Card>
@@ -15,9 +34,17 @@ export function Burn() {
           value={amount}
           onChange={(event) => setAmount(event.target.value)}
         />
-        <button className="rounded bg-pink-400 px-3 py-2 font-bold text-neutral-900">
+        <Button
+          onClick={() => {
+            writeContract({
+              address: chainConfig.BREAD.address,
+              account: address,
+              args: [parseUnits(amount, 18), address],
+            });
+          }}
+        >
           Burn
-        </button>
+        </Button>
       </div>
     </Card>
   );

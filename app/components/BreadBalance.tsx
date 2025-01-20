@@ -1,12 +1,15 @@
 import { formatUnits, type Hex } from "viem";
 
 import { chainConfig } from "~/chainConfig";
-import { useReadErc20BalanceOf } from "~/generated";
+import { useReadBreadBalanceOf } from "~/generated";
 
 export function BreadBalance({ address }: { address: Hex }) {
-  const { status, data } = useReadErc20BalanceOf({
+  const { status, data } = useReadBreadBalanceOf({
     address: chainConfig.BREAD.address,
     args: [address],
+    query: {
+      refetchInterval: 3000,
+    },
   });
 
   return (

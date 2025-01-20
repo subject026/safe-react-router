@@ -3,8 +3,8 @@ import type { Route } from "../+types/root";
 
 import { NativeBalance } from "~/components/NativeBalance";
 import { BreadBalance } from "~/components/BreadBalance";
-import { Bake } from "~/components/Bake";
 import { Burn } from "~/components/Burn";
+import { SafeTransaction } from "~/components/SafeTransaction";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -24,8 +24,8 @@ export default function Index() {
           <div className="grid gap-6">
             <NativeBalance address={account.address} />
             <BreadBalance address={account.address} />
-            <Bake />
-            <Burn />
+            <Burn address={account.address} />
+            <SafeTransaction />
           </div>
         </>
       )}
